@@ -1,0 +1,53 @@
+<div fxLayout="row" style="margin-top: 50px">
+  <mat-card fxFlexOrder="2" fxFlex.lt-sm="100" fxFlex.gt-md="60" fxFlex="80">
+    <div fxLayout="row">
+      <h2 fxFlex>Canali</h2>
+      <div fxFlex fxFlexAlign="center" *ngIf="this.form.errors?.error">
+        <mat-error style="text-align: end">*Canali con lo stesso nome!</mat-error>
+        <br>
+      </div>
+    </div>
+    <form [formGroup]="form">
+      <ng-template ngFor let-channel [ngForOf]="channels" let-i="index">
+        <div formGroupName="{{this.channelControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap"
+             fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
+          <mat-form-field fxFlex>
+            <mat-label>Nome canale {{i + 1}}</mat-label>
+            <input required matInput formControlName="{{this.nameControl()}}">
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <mat-label>Consorzio amministratore canale {{i + 1}}</mat-label>
+            <mat-select required formControlName="{{this.consortiumControl()}}">
+              <mat-option *ngFor="let consortium of this.network.consortiums"
+                          [value]="consortium.name">{{consortium.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <mat-label>Organizzazioni canale {{i + 1}}</mat-label>
+            <mat-select required multiple formControlName="{{this.orgsControl()}}">
+              <mat-option *ngFor="let org of this.network.orgs"
+                          [value]="org.fullName">{{org.fullName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+        <br>
+      </ng-template>
+      <div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="2%">
+        <button type="button" color="accent" (click)="addChannel()" mat-button>Nuovo canale
+          <mat-icon>add</mat-icon>
+        </button>
+        <button (click)="removeChannel()" *ngIf="this.channels.length > 1" type="button" color="warn" mat-button>
+          Rimuovi canale
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div fxFlex></div>
+        <button color="accent" mat-flat-button type="submit" matStepperNext>Avanti
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+  <div fxFlex fxFlexOrder="1"></div>
+  <div fxFlex fxFlexOrder="3"></div>
+</div>

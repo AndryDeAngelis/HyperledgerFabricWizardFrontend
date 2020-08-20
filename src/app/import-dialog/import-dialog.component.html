@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Sei sicuro di voler importare?</h1>
+<div mat-dialog-content>
+  <br>
+  <h3>Importando i dati cancellerai quelli attualmente immessi.</h3>
+  <br>
+</div>
+<div mat-dialog-actions fxLayout="row">
+  <button mat-button fxFlex (click)="cancel()">Annulla</button>
+  <button cdkFocusInitial (click)="yes()" mat-flat-button color="primary" fxFlex>Conferma</button>
+</div>

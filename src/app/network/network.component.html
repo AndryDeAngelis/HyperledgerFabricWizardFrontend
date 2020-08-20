@@ -1,0 +1,55 @@
+<div fxLayout="row" style="margin-top: 50px">
+  <mat-card fxFlexOrder="2" fxFlex.lt-sm="100" fxFlex.gt-md="60" fxFlex="80">
+    <form [formGroup]="form">
+      <h2>Rete</h2>
+      <mat-form-field>
+        <mat-label>Nome rete</mat-label>
+        <input required matInput placeholder="sample-network" formControlName="network_name">
+        <mat-error *ngIf="networkName.invalid">{{invalidNetworkName()}}</mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <div fxLayout="row">
+        <h2 fxFlex>Organizzazioni</h2>
+        <div fxFlex fxFlexAlign="center" *ngIf="this.form.errors?.error">
+          <mat-error style="text-align: end">*Nome e dominio duplicati</mat-error>
+          <br>
+        </div>
+      </div>
+      <ng-template ngFor [ngForOf]="orgs" let-i="index">
+        <div formGroupName="{{this.orgControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%"
+             fxLayoutGap="2%">
+          <mat-form-field fxFlex>
+            <mat-label>Nome organizzazione {{i + 1}}</mat-label>
+            <input matInput placeholder="org{{i+1}}" formControlName="{{this.nameControl()}}" required>
+            <mat-error *ngIf="this.form.get(nameControl(i)).errors?.pattern">Il nome non può contenere spazi</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <mat-label>Dominio organizzazione {{i + 1}}</mat-label>
+            <input matInput placeholder="example.com" formControlName="{{this.domainControl()}}" required>
+            <mat-error *ngIf="this.form.get(domainControl(i)).errors?.pattern">Il dominio non può contenere spazi
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <mat-divider style="margin-top: 4px"></mat-divider>
+        <br>
+      </ng-template>
+      <div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="2%">
+        <button type="button" (click)="addOrg()" color="accent" mat-button>Nuova
+          organizzazione
+          <mat-icon>add</mat-icon>
+        </button>
+        <button (click)="removeOrg()" *ngIf="orgs.length > 2" type="button" color="warn" mat-button>
+          Rimuovi organizzazione
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div fxFlex></div>
+        <button color="accent" mat-flat-button matStepperNext>Avanti
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+  <div fxFlex fxFlexOrder="1"></div>
+  <div fxFlex fxFlexOrder="3"></div>
+</div>

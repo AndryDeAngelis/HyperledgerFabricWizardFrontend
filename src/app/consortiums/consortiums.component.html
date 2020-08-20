@@ -1,0 +1,47 @@
+<div fxLayout="row" style="margin-top: 50px">
+  <mat-card fxFlexOrder="2" fxFlex.lt-sm="100" fxFlex.gt-md="60" fxFlex="80">
+    <div fxLayout="row">
+      <h2 fxFlex>Consorzi</h2>
+      <div fxFlex fxFlexAlign="center" *ngIf="this.form.errors?.error">
+        <mat-error style="text-align: end">*Consorzi con lo stesso nome!</mat-error>
+        <br>
+      </div>
+    </div>
+    <form [formGroup]="form">
+      <ng-template ngFor let-consortium [ngForOf]="consortiums" let-i="index">
+        <div formGroupName="{{this.consortiumControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap"
+             fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
+          <mat-form-field fxFlex>
+            <mat-label>Nome consorzio {{i + 1}}</mat-label>
+            <input required matInput formControlName="{{this.nameControl()}}">
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <mat-label>Organizzazioni consorzio {{i + 1}}</mat-label>
+            <mat-select required multiple formControlName="{{this.orgsControl()}}">
+              <ng-template ngFor let-org [ngForOf]="this.orgs">
+                <mat-option [value]="org.fullName">{{org.fullName}}</mat-option>
+              </ng-template>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+        <br>
+      </ng-template>
+      <div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="2%">
+        <button type="button" color="accent" (click)="addConsortium()" mat-button>Nuovo consorzio
+          <mat-icon>add</mat-icon>
+        </button>
+        <button (click)="removeConsortium()" *ngIf="this.consortiums.length > 1" type="button" color="warn" mat-button>
+          Rimuovi consorzio
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div fxFlex></div>
+        <button color="accent" mat-flat-button type="submit" matStepperNext>Avanti
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+  <div fxFlex fxFlexOrder="1"></div>
+  <div fxFlex fxFlexOrder="3"></div>
+</div>
