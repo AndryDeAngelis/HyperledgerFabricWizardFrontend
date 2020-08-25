@@ -22,7 +22,7 @@
                           [value]="consortium.name">{{consortium.name}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field fxFlex *ngIf="!this.consortium.empty">
+          <mat-form-field fxFlex [fxHide]="this.consortium.empty">
             <mat-label>Organizzazioni canale {{i + 1}}</mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
               <mat-option matoptionselected [selected]="isPartOfConsortium(i, org)"
