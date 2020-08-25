@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Network} from '../_models/network';
 import {Channel} from '../_models/channel';
+import {Org} from '../_models/org';
 
 @Component({
   selector: 'app-channels',
@@ -51,6 +52,14 @@ export class ChannelsComponent implements OnInit {
     this.addChannelControls(length);
   }
 
+  isPartOfConsortium(i: number, org: Org): boolean {
+    if (this.channels[i].consortium) {
+      return !!this.channels[i].consortium.orgs.find(o => o.fullName === org.fullName);
+    } else {
+      return false;
+    }
+  }
+
   private addChannelControls(i: number): void {
     const innerForm = this.formBuilder.group({});
     const channelName = this.formBuilder.control('', [Validators.required]);
@@ -70,6 +79,7 @@ export class ChannelsComponent implements OnInit {
       this.channels[i].consortium = this.network.consortiums.find(c => {
         return c.name === v;
       });
+      // channelOrgs.setValue(this.channels[i].consortium.orgs.map(o => o.fullName));
     });
     channelOrgs.valueChanges.subscribe((orgs: string[]) => {
       this.channels[i].orgs = this.network.orgs.filter(o => {
@@ -116,5 +126,4 @@ export class ChannelsComponent implements OnInit {
       return null;
     });
   }
-
 }

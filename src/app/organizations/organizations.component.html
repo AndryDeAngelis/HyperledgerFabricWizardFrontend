@@ -2,7 +2,7 @@
   <mat-vertical-stepper linear #stepper>
     <mat-step [stepControl]="organizationComponent.form" *ngFor="let org of orgs; let i = index">
       <ng-template matStepLabel>{{org.fullName}}</ng-template>
-      <app-organization [last]="this.orgs.length-1 === i" [rootStepper]="this.rootStepper"
+      <app-organization [i]="i" [last]="this.orgs.length-1 === i" [rootStepper]="this.rootStepper"
                         [parentForm]="this.form" #organizationComponent
                         [org]="org"></app-organization>
     </mat-step>

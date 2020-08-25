@@ -33,6 +33,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import { ImportDialogComponent } from './import-dialog/import-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatoptionselectedDirective } from './matoptionselected.directive';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'standard'
@@ -48,7 +49,8 @@ const appearance: MatFormFieldDefaultOptions = {
     ConsortiumsComponent,
     ChannelsComponent,
     SummaryComponent,
-    ImportDialogComponent
+    ImportDialogComponent,
+    MatoptionselectedDirective
   ],
     imports: [
         BrowserModule,

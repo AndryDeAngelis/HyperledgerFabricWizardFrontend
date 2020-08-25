@@ -16,6 +16,7 @@ export class OrganizationComponent implements OnInit, OnDestroy {
   @Input() rootStepper: MatStepper;
   @Input() parentForm: FormGroup;
   @Input() last: boolean;
+  @Input() i: number;
   form: FormGroup;
   hide = true;
   caName: FormControl;
@@ -194,7 +195,9 @@ export class OrganizationComponent implements OnInit, OnDestroy {
         port.setValidators(Validators.required);
       } else {
         url.setValidators([]);
+        url.updateValueAndValidity();
         port.setValidators([]);
+        port.updateValueAndValidity();
       }
     });
     urlControl.valueChanges.subscribe(e => {
@@ -275,7 +278,7 @@ export class OrganizationComponent implements OnInit, OnDestroy {
     } else {
       this.addMember();
     }
-    this.parentForm.addControl(this.org.fullName, this.form);
+    this.parentForm.addControl(String(this.i), this.form);
     this.form.setValidators((control: FormGroup) => {
       const memberNames = Object.values(control.controls).filter(c => {
         const nameControl = c.get(this.nameControl());
@@ -290,6 +293,6 @@ export class OrganizationComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.parentForm.removeControl(this.org.fullName);
+    this.parentForm.removeControl(String(this.i));
   }
 }

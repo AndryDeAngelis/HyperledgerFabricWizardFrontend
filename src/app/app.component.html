@@ -21,5 +21,6 @@
       <app-summary [network]="this.network"></app-summary>
     </mat-step>
   </mat-horizontal-stepper>
-  <input accept="application/json" (change)="fileToImportSelected($event.target.files[0])" #import type="file" style="display: none"/>
+  <input accept="application/json" (change)="fileToImportSelected($event.target.files[0])" #import type="file"
+         style="display: none"/>
 </app-nav>

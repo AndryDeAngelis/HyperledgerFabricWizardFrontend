@@ -17,15 +17,17 @@
           </mat-form-field>
           <mat-form-field fxFlex>
             <mat-label>Consorzio amministratore canale {{i + 1}}</mat-label>
-            <mat-select required formControlName="{{this.consortiumControl()}}">
+            <mat-select #consortium required formControlName="{{this.consortiumControl()}}">
               <mat-option *ngFor="let consortium of this.network.consortiums"
                           [value]="consortium.name">{{consortium.name}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field fxFlex>
+          <mat-form-field fxFlex *ngIf="!this.consortium.empty">
             <mat-label>Organizzazioni canale {{i + 1}}</mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
-              <mat-option *ngFor="let org of this.network.orgs"
+              <mat-option matoptionselected [selected]="isPartOfConsortium(i, org)"
+                          [disabled]="isPartOfConsortium(i, org)"
+                          *ngFor="let org of this.network.orgs"
                           [value]="org.fullName">{{org.fullName}}</mat-option>
             </mat-select>
           </mat-form-field>
