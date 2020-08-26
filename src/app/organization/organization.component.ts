@@ -2,9 +2,9 @@ import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import {Org} from '../_models/org';
 import {Client, Entity, Orderer, Peer, Type} from '../_models/entity';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Ca, State} from '../_models/ca';
-import {MatStepper} from '@angular/material/stepper';
+import {Ca} from '../_models/ca';
 import {states} from '../_models/states';
+import {CdkStepper} from '@angular/cdk/stepper';
 
 
 @Component({
@@ -13,7 +13,7 @@ import {states} from '../_models/states';
   styleUrls: ['./organization.component.scss']
 })
 export class OrganizationComponent implements OnInit, OnDestroy {
-  @Input() rootStepper: MatStepper;
+  @Input() rootStepper: CdkStepper;
   @Input() parentForm: FormGroup;
   @Input() last: boolean;
   @Input() i: number;

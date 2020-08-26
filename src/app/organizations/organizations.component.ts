@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewC
 import {Org} from '../_models/org';
 import {MatStepper} from '@angular/material/stepper';
 import {OrganizationComponent} from '../organization/organization.component';
-import {CdkStep} from '@angular/cdk/stepper';
+import {CdkStep, CdkStepper} from '@angular/cdk/stepper';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -16,7 +16,7 @@ export class OrganizationsComponent implements OnInit {
     this.form = this.formBuilder.group({});
   }
 
-  @Input() rootStepper: MatStepper;
+  @Input() rootStepper: CdkStepper;
 
   form: FormGroup;
 

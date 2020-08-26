@@ -1,11 +1,13 @@
 @import '~@angular/material/theming';
 @import "app/app.component";
+@import "app/mystepper/mystepper.component";
 
 
 @include mat-core();
 
 @mixin custom-theme($theme) {
   @include app($theme);
+  @include mystep($theme);
 }
 
 
@@ -32,7 +34,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent); //$dark-warn);
 }
 
 body.light-theme {
-  background: white!important;
+  background: white !important;
 }
 
 body.dark-theme {

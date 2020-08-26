@@ -1,26 +1,21 @@
 <app-nav [rootComponent]="this" [title]="this.title">
-  <mat-horizontal-stepper [@.disabled]="true" linear #stepper>
-    <mat-step [stepControl]="networkComponent.form">
-      <ng-template matStepLabel>Rete</ng-template>
+  <app-mystepper [@.disabled]="true" linear #stepper>
+    <cdk-step label="Rete" [stepControl]="networkComponent.form">
       <app-network #networkComponent [network]="this.network"></app-network>
-    </mat-step>
-    <mat-step [stepControl]="organizationsComponent.form">
-      <ng-template matStepLabel>Organizzazioni</ng-template>
+    </cdk-step>
+    <cdk-step label="Organizzazioni" [stepControl]="organizationsComponent.form">
       <app-organizations [rootStepper]="stepper" #organizationsComponent [orgs]="this.network.orgs"></app-organizations>
-    </mat-step>
-    <mat-step [stepControl]="consortiumsComponent.form">
-      <ng-template matStepLabel>Consorzi</ng-template>
+    </cdk-step>
+    <cdk-step label="Consorzi" [stepControl]="consortiumsComponent.form">
       <app-consortiums #consortiumsComponent [network]="this.network"></app-consortiums>
-    </mat-step>
-    <mat-step [stepControl]="channelsComponent.form">
-      <ng-template matStepLabel>Canali</ng-template>
+    </cdk-step>
+    <cdk-step label="Canali" [stepControl]="channelsComponent.form">
       <app-channels #channelsComponent [network]="this.network"></app-channels>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Fine</ng-template>
+    </cdk-step>
+    <cdk-step label="Fine">
       <app-summary [network]="this.network"></app-summary>
-    </mat-step>
-  </mat-horizontal-stepper>
+    </cdk-step>
+  </app-mystepper>
   <input accept="application/json" (change)="fileToImportSelected($event.target.files[0])" #import type="file"
          style="display: none"/>
 </app-nav>
