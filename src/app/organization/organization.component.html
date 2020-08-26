@@ -2,21 +2,19 @@
   <mat-card fxFlexOrder="2" fxFlex.lt-sm="100" fxFlex.gt-md="60" fxFlex="80">
     <form [formGroup]="form">
       <h2>Certificate Authority</h2>
-      <div formGroupName="ca" fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
+      <div formGroupName="ca" fxLayout="row wrap" fxLayoutGap="2% grid">
         <mat-form-field fxFlex>
           <mat-label>Nome</mat-label>
           <input required placeholder="ca-{{org.name}}" matInput formControlName="caName">
         </mat-form-field>
-        <div fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
-          <mat-form-field fxFlex>
-            <mat-label>Stato</mat-label>
-            <mat-select formControlName="caState">
-              <ng-template ngFor let-state [ngForOf]="states">
-                <mat-option [value]="state.code">{{state.name}}</mat-option>
-              </ng-template>
-            </mat-select>
-          </mat-form-field>
-        </div>
+        <mat-form-field fxFlex>
+          <mat-label>Stato</mat-label>
+          <mat-select formControlName="caState">
+            <ng-template ngFor let-state [ngForOf]="states">
+              <mat-option [value]="state.code">{{state.name}}</mat-option>
+            </ng-template>
+          </mat-select>
+        </mat-form-field>
         <mat-form-field fxFlex>
           <mat-label>Username</mat-label>
           <input required placeholder="admin" matInput formControlName="caUsername">
@@ -47,7 +45,7 @@
       </div>
       <ng-template ngFor let-entity [ngForOf]="entities" let-i="index">
         <div formGroupName="{{this.memberControl(i)}}">
-          <div fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
+          <div fxLayout="row wrap" fxLayoutGap="2% grid">
             <mat-form-field fxFlex>
               <mat-label>Nome <strong>membro {{i + 1}}</strong></mat-label>
               <input required placeholder="peer{{i+1}}" matInput formControlName="{{nameControl()}}">
@@ -68,24 +66,20 @@
                 </ng-template>
               </mat-select>
             </mat-form-field>
-          </div>
-          <div *ngIf="isHost(entity)" fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%"
-               fxLayoutGap="2%">
-            <mat-form-field fxFlex>
-              <mat-label>URL <strong>membro {{i + 1}}</strong></mat-label>
-              <input required placeholder="localhost" matInput formControlName="{{this.urlControl()}}">
-            </mat-form-field>
-            <mat-form-field fxFlex>
-              <mat-label>Porta <strong>membro {{i + 1}}</strong></mat-label>
-              <input required placeholder="7050" matInput type="number"
-                     formControlName="{{this.portControl()}}">
-            </mat-form-field>
-            <ng-template [ngIf]="isPeer(entity)">
-              <mat-checkbox formControlName="{{this.anchorControl()}}"
-                            style="padding-bottom: 1.34375em"
-                            fxFlex
-                            fxFlexAlign="center"
-                            fxFlexAlign.lt-md="auto"
+            <ng-template [ngIf]="isHost(entity)">
+              <mat-form-field fxFlex>
+                <mat-label>URL <strong>membro {{i + 1}}</strong></mat-label>
+                <input required placeholder="localhost" matInput formControlName="{{this.urlControl()}}">
+              </mat-form-field>
+              <mat-form-field fxFlex>
+                <mat-label>Porta <strong>membro {{i + 1}}</strong></mat-label>
+                <input required placeholder="7050" matInput type="number"
+                       formControlName="{{this.portControl()}}">
+              </mat-form-field>
+              <mat-checkbox fxFlex
+                            class="checkbox"
+                            *ngIf="isPeer(entity)"
+                            formControlName="{{this.anchorControl()}}"
                             [checked]="isAnchor(entity)"
                             color="primary">
                 Anchor peer

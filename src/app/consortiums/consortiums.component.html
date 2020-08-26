@@ -9,13 +9,12 @@
     </div>
     <form [formGroup]="form">
       <ng-template ngFor let-consortium [ngForOf]="consortiums" let-i="index">
-        <div formGroupName="{{this.consortiumControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap"
-             fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
+        <div formGroupName="{{this.consortiumControl(i)}}" fxLayout="row wrap" fxLayoutGap="2% grid">
           <mat-form-field fxFlex>
             <mat-label>Nome <strong>consorzio {{i + 1}}</strong></mat-label>
             <input required matInput formControlName="{{this.nameControl()}}">
           </mat-form-field>
-          <mat-form-field fxFill>
+          <mat-form-field fxFlex="100">
             <mat-label>Organizzazioni <strong>consorzio {{i + 1}}</strong></mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
               <ng-template ngFor let-org [ngForOf]="this.orgs">

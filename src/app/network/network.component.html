@@ -17,8 +17,7 @@
         </div>
       </div>
       <ng-template ngFor [ngForOf]="orgs" let-i="index">
-        <div formGroupName="{{this.orgControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%"
-             fxLayoutGap="2%">
+        <div formGroupName="{{this.orgControl(i)}}" fxLayout="row wrap" fxLayoutGap="2% grid">
           <mat-form-field fxFlex>
             <mat-label>Nome <strong>organizzazione {{i + 1}}</strong></mat-label>
             <input matInput placeholder="org{{i+1}}" formControlName="{{this.nameControl()}}" required>

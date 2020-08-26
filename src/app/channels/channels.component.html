@@ -9,8 +9,7 @@
     </div>
     <form [formGroup]="form">
       <ng-template ngFor let-channel [ngForOf]="channels" let-i="index">
-        <div formGroupName="{{this.channelControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap"
-             fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
+        <div formGroupName="{{this.channelControl(i)}}" fxLayout="row wrap" fxLayoutGap="2% grid">
           <mat-form-field fxFlex>
             <mat-label>Nome <strong>canale {{i + 1}}</strong></mat-label>
             <input required matInput formControlName="{{this.nameControl()}}">
@@ -22,7 +21,7 @@
                           [value]="consortium.name">{{consortium.name}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field fxFill [fxHide]="this.consortium.empty">
+          <mat-form-field fxFlex="100" [fxHide]="this.consortium.empty">
             <mat-label>Organizzazioni <strong>canale {{i + 1}}</strong></mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
               <mat-option matoptionselected [selected]="isPartOfConsortium(i, org)"
