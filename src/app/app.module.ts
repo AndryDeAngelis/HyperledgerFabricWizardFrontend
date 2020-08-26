@@ -36,7 +36,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatoptionselectedDirective } from './matoptionselected.directive';
 
 const appearance: MatFormFieldDefaultOptions = {
-  appearance: 'standard'
+  appearance: 'outline'
 };
 
 @NgModule({

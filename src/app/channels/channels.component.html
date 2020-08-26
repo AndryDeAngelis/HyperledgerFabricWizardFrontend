@@ -12,18 +12,18 @@
         <div formGroupName="{{this.channelControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap"
              fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
           <mat-form-field fxFlex>
-            <mat-label>Nome canale {{i + 1}}</mat-label>
+            <mat-label>Nome <strong>canale {{i + 1}}</strong></mat-label>
             <input required matInput formControlName="{{this.nameControl()}}">
           </mat-form-field>
           <mat-form-field fxFlex>
-            <mat-label>Consorzio amministratore canale {{i + 1}}</mat-label>
+            <mat-label>Consorzio amministratore <strong>canale {{i + 1}}</strong></mat-label>
             <mat-select #consortium required formControlName="{{this.consortiumControl()}}">
               <mat-option *ngFor="let consortium of this.network.consortiums"
                           [value]="consortium.name">{{consortium.name}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field fxFlex [fxHide]="this.consortium.empty">
-            <mat-label>Organizzazioni canale {{i + 1}}</mat-label>
+          <mat-form-field fxFill [fxHide]="this.consortium.empty">
+            <mat-label>Organizzazioni <strong>canale {{i + 1}}</strong></mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
               <mat-option matoptionselected [selected]="isPartOfConsortium(i, org)"
                           [disabled]="isPartOfConsortium(i, org)"

@@ -20,12 +20,12 @@
         <div formGroupName="{{this.orgControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap" fxLayoutGap.lt-md="0%"
              fxLayoutGap="2%">
           <mat-form-field fxFlex>
-            <mat-label>Nome organizzazione {{i + 1}}</mat-label>
+            <mat-label>Nome <strong>organizzazione {{i + 1}}</strong></mat-label>
             <input matInput placeholder="org{{i+1}}" formControlName="{{this.nameControl()}}" required>
             <mat-error *ngIf="this.form.get(nameControl(i)).errors?.pattern">Il nome non può contenere spazi</mat-error>
           </mat-form-field>
           <mat-form-field fxFlex>
-            <mat-label>Dominio organizzazione {{i + 1}}</mat-label>
+            <mat-label>Dominio <strong>organizzazione {{i + 1}}</strong></mat-label>
             <input matInput placeholder="example.com" formControlName="{{this.domainControl()}}" required>
             <mat-error *ngIf="this.form.get(domainControl(i)).errors?.pattern">Il dominio non può contenere spazi
             </mat-error>

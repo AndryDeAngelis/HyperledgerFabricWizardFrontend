@@ -12,11 +12,11 @@
         <div formGroupName="{{this.consortiumControl(i)}}" fxLayout.lt-md="column" fxLayout="row wrap"
              fxLayoutGap.lt-md="0%" fxLayoutGap="2%">
           <mat-form-field fxFlex>
-            <mat-label>Nome consorzio {{i + 1}}</mat-label>
+            <mat-label>Nome <strong>consorzio {{i + 1}}</strong></mat-label>
             <input required matInput formControlName="{{this.nameControl()}}">
           </mat-form-field>
-          <mat-form-field fxFlex>
-            <mat-label>Organizzazioni consorzio {{i + 1}}</mat-label>
+          <mat-form-field fxFill>
+            <mat-label>Organizzazioni <strong>consorzio {{i + 1}}</strong></mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
               <ng-template ngFor let-org [ngForOf]="this.orgs">
                 <mat-option [value]="org.fullName">{{org.fullName}}</mat-option>
