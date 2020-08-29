@@ -80,9 +80,11 @@ export class AppComponent implements OnInit {
     const fileReader = new FileReader();
     fileReader.onload = (e) => {
       try {
-        localStorage.setItem('json', fileReader.result as string);
+        const json = JSON.parse(fileReader.result as string);
+        localStorage.setItem('json', JSON.stringify(json));
         location.reload();
       } catch (e) {
+        localStorage.clear();
         this.snackbar.open('File non supportato', null, {
           duration: 2000
         });
