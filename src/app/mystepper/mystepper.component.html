@@ -14,7 +14,7 @@
     </ng-template>
   </div>
   <div fxHide.md fxHide.gt-md fxLayout="row" class="mystep-stepper-mini">
-    <button fxFlex mat-button cdkStepperPrevious>
+    <button [style.visibility]="this.selectedIndex-1 < 0 ? 'hidden' : 'visible'" fxFlex mat-button cdkStepperPrevious>
       <mat-icon class="mystep-icon">chevron_left</mat-icon>
     </button>
     <div class="mystep-label" fxFlex="80">
@@ -24,7 +24,8 @@
         </div>
       </div>
     </div>
-    <button fxFlex mat-button cdkStepperNext>
+    <button [style.visibility]="this.selectedIndex+1 > steps.length-1 ? 'hidden' : 'visible'" fxFlex mat-button
+            cdkStepperNext>
       <mat-icon class="mystep-icon">chevron_right</mat-icon>
     </button>
   </div>
