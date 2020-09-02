@@ -3,7 +3,7 @@
     <form [formGroup]="form">
       <h2>Network</h2>
       <mat-form-field>
-        <mat-label>Network</mat-label>
+        <mat-label>Network name</mat-label>
         <input required matInput placeholder="sample-network" formControlName="network_name">
         <mat-error *ngIf="networkName.invalid">{{invalidNetworkName()}}</mat-error>
       </mat-form-field>
