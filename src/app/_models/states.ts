@@ -2,7 +2,7 @@ import {State} from './ca';
 
 export const states: State[] = [
   {
-    name: 'Italia',
+    name: 'Italy',
     code: 'IT'
   },
   {
@@ -18,7 +18,7 @@ export const states: State[] = [
     code: 'AT'
   },
   {
-    name: 'Belgio',
+    name: 'Belgium',
     code: 'BE'
   },
   {
@@ -26,35 +26,35 @@ export const states: State[] = [
     code: 'BG'
   },
   {
-    name: 'Danimarca',
+    name: 'Denmark',
     code: 'DK'
   },
   {
-    name: 'Finlandia',
+    name: 'Finland',
     code: 'FI'
   },
   {
-    name: 'Francia',
+    name: 'France',
     code: 'FR'
   },
   {
-    name: 'Germania',
+    name: 'Germany',
     code: 'DE'
   },
   {
-    name: 'Regno Unito',
+    name: 'United Kingdom',
     code: 'UK'
   },
   {
-    name: 'Grecia',
+    name: 'Greece',
     code: 'GR'
   },
   {
-    name: 'Irlanda',
+    name: 'Ireland',
     code: 'IE'
   },
   {
-    name: 'Islanda',
+    name: 'Iceland',
     code: 'IS'
   },
   {
@@ -62,7 +62,7 @@ export const states: State[] = [
     code: 'LI'
   },
   {
-    name: 'Lussemburgo',
+    name: 'Luxembourg',
     code: 'LU'
   },
   {
@@ -74,19 +74,19 @@ export const states: State[] = [
     code: 'MC'
   },
   {
-    name: 'Norvegia',
+    name: 'Norway',
     code: 'NO'
   },
   {
-    name: 'Paesi Bassi',
+    name: 'Netherlands',
     code: 'NL'
   },
   {
-    name: 'Polonia',
+    name: 'Poland',
     code: 'PL'
   },
   {
-    name: 'Portogallo',
+    name: 'Portugal',
     code: 'PT'
   },
   {
@@ -98,31 +98,31 @@ export const states: State[] = [
     code: 'SM'
   },
   {
-    name: 'Spagna',
+    name: 'Spain',
     code: 'ES'
   },
   {
-    name: 'Svezia',
+    name: 'Sweden',
     code: 'SE'
   },
   {
-    name: 'Svizzera',
+    name: 'Switzerland',
     code: 'CH'
   },
   {
-    name: 'Ucraina',
+    name: 'Ukraine',
     code: 'UA'
   },
   {
-    name: 'Ungheria',
+    name: 'Hungary',
     code: 'HU'
   },
   {
-    name: 'Federazione russa',
+    name: 'Russian Federation',
     code: 'RU'
   },
   {
-    name: 'Stato della Città del Vaticano',
+    name: 'Vatican City State',
     code: 'VA'
   },
   {
@@ -130,15 +130,15 @@ export const states: State[] = [
     code: 'EE'
   },
   {
-    name: 'Lettonia',
+    name: 'Latvia',
     code: 'LV'
   },
   {
-    name: 'Lituania',
+    name: 'Lithuania',
     code: 'LT'
   },
   {
-    name: 'Croazia',
+    name: 'Croatia',
     code: 'HR'
   },
   {
@@ -146,11 +146,11 @@ export const states: State[] = [
     code: 'SI'
   },
   {
-    name: 'Bosnia-Erzegovina',
+    name: 'Bosnia and Herzegovina',
     code: 'BA'
   },
   {
-    name: 'Macedonia del Nord',
+    name: 'North Macedonia',
     code: 'MK'
   },
   {
@@ -158,15 +158,15 @@ export const states: State[] = [
     code: 'MD'
   },
   {
-    name: 'Slovacchia',
+    name: 'Slovakia',
     code: 'SK'
   },
   {
-    name: 'Bielorussia',
+    name: 'Belarus',
     code: 'BY'
   },
   {
-    name: 'Repubblica ceca',
+    name: 'Czech Republic',
     code: 'CZ'
   },
   {
@@ -186,11 +186,11 @@ export const states: State[] = [
     code: 'AF'
   },
   {
-    name: 'Arabia Saudita',
+    name: 'Saudi Arabia',
     code: 'SA'
   },
   {
-    name: 'Bahrein',
+    name: 'Bahrain',
     code: 'BH'
   },
   {
@@ -202,7 +202,7 @@ export const states: State[] = [
     code: 'BT'
   },
   {
-    name: 'Myanmar/Birmania',
+    name: 'Myanmar/Burma',
     code: 'MM'
   },
   {
@@ -210,7 +210,7 @@ export const states: State[] = [
     code: 'BN'
   },
   {
-    name: 'Cambogia',
+    name: 'Cambodia',
     code: 'KH'
   },
   {
@@ -218,39 +218,39 @@ export const states: State[] = [
     code: 'LK'
   },
   {
-    name: 'Cina',
+    name: 'China',
     code: 'CN'
   },
   {
-    name: 'Cipro',
+    name: 'Cyprus',
     code: 'CY'
   },
   {
-    name: 'Corea del Nord',
+    name: 'North Korea',
     code: 'KP'
   },
   {
-    name: 'Corea del Sud',
+    name: 'South Korea',
     code: 'KR'
   },
   {
-    name: 'Emirati Arabi Uniti',
+    name: 'United Arab Emirates',
     code: 'AE'
   },
   {
-    name: 'Filippine',
+    name: 'Philippines',
     code: 'PH'
   },
   {
-    name: 'Palestina',
+    name: 'Palestine',
     code: 'PS'
   },
   {
-    name: 'Giappone',
+    name: 'Japan',
     code: 'JP'
   },
   {
-    name: 'Giordania',
+    name: 'Jordan',
     code: 'JO'
   },
   {
@@ -270,7 +270,7 @@ export const states: State[] = [
     code: 'IQ'
   },
   {
-    name: 'Israele',
+    name: 'Israel',
     code: 'IL'
   },
   {
@@ -282,7 +282,7 @@ export const states: State[] = [
     code: 'LA'
   },
   {
-    name: 'Libano',
+    name: 'Lebanon',
     code: 'LB'
   },
   {
@@ -290,7 +290,7 @@ export const states: State[] = [
     code: 'TL'
   },
   {
-    name: 'Maldive',
+    name: 'Maldives',
     code: 'MV'
   },
   {
@@ -322,15 +322,15 @@ export const states: State[] = [
     code: 'SG'
   },
   {
-    name: 'Siria',
+    name: 'Syria',
     code: 'SY'
   },
   {
-    name: 'Thailandia',
+    name: 'Thailand',
     code: 'TH'
   },
   {
-    name: 'Turchia',
+    name: 'Turkey',
     code: 'TR'
   },
   {
@@ -354,7 +354,7 @@ export const states: State[] = [
     code: 'AM'
   },
   {
-    name: 'Azerbaigian',
+    name: 'Azerbaijan',
     code: 'AZ'
   },
   {
@@ -362,11 +362,11 @@ export const states: State[] = [
     code: 'GE'
   },
   {
-    name: 'Kirghizistan',
+    name: 'Kyrgyzstan',
     code: 'KG'
   },
   {
-    name: 'Tagikistan',
+    name: 'Tajikistan',
     code: 'TJ'
   },
   {
@@ -386,7 +386,7 @@ export const states: State[] = [
     code: 'AO'
   },
   {
-    name: 'Costa d\\\'Avorio',
+    name: 'Côte d\'Ivoire',
     code: 'CI'
   },
   {
@@ -406,23 +406,23 @@ export const states: State[] = [
     code: 'BI'
   },
   {
-    name: 'Camerun',
+    name: 'Cameroon',
     code: 'CM'
   },
   {
-    name: 'Capo Verde',
+    name: 'Cape Verde',
     code: 'CV'
   },
   {
-    name: 'Repubblica Centrafricana',
+    name: 'Central African Republic',
     code: 'CF'
   },
   {
-    name: 'Ciad',
+    name: 'Chad',
     code: 'TD'
   },
   {
-    name: 'Comore',
+    name: 'Comoros',
     code: 'KM'
   },
   {
@@ -430,11 +430,11 @@ export const states: State[] = [
     code: 'CG'
   },
   {
-    name: 'Egitto',
+    name: 'Egypt',
     code: 'EG'
   },
   {
-    name: 'Etiopia',
+    name: 'Ethiopia',
     code: 'ET'
   },
   {
@@ -450,7 +450,7 @@ export const states: State[] = [
     code: 'GH'
   },
   {
-    name: 'Gibuti',
+    name: 'Djibouti',
     code: 'DJ'
   },
   {
@@ -462,7 +462,7 @@ export const states: State[] = [
     code: 'GW'
   },
   {
-    name: 'Guinea equatoriale',
+    name: 'Equatorial Guinea',
     code: 'GQ'
   },
   {
@@ -478,7 +478,7 @@ export const states: State[] = [
     code: 'LR'
   },
   {
-    name: 'Libia',
+    name: 'Libya',
     code: 'LY'
   },
   {
@@ -494,7 +494,7 @@ export const states: State[] = [
     code: 'ML'
   },
   {
-    name: 'Marocco',
+    name: 'Morocco',
     code: 'MA'
   },
   {
@@ -502,11 +502,11 @@ export const states: State[] = [
     code: 'MR'
   },
   {
-    name: 'Maurizio',
+    name: 'Mauritius',
     code: 'MU'
   },
   {
-    name: 'Mozambico',
+    name: 'Mozambique',
     code: 'MZ'
   },
   {
@@ -522,11 +522,11 @@ export const states: State[] = [
     code: 'NG'
   },
   {
-    name: 'Ruanda',
+    name: 'Rwanda',
     code: 'RW'
   },
   {
-    name: 'Sao Tomé e Principe',
+    name: 'Sao Tome and Principe',
     code: 'ST'
   },
   {
@@ -546,7 +546,7 @@ export const states: State[] = [
     code: 'SO'
   },
   {
-    name: 'Sudafrica',
+    name: 'South Africa',
     code: 'ZA'
   },
   {
@@ -574,7 +574,7 @@ export const states: State[] = [
     code: 'UG'
   },
   {
-    name: 'Repubblica Democratica del Congo',
+    name: 'Democratic Republic of the Congo',
     code: 'CD'
   },
   {
@@ -590,11 +590,11 @@ export const states: State[] = [
     code: 'ER'
   },
   {
-    name: 'Sud Sudan',
+    name: 'South Sudan',
     code: 'SS'
   },
   {
-    name: 'Antigua e Barbuda',
+    name: 'Antigua and Barbuda',
     code: 'AG'
   },
   {
@@ -626,7 +626,7 @@ export const states: State[] = [
     code: 'DM'
   },
   {
-    name: 'Repubblica Dominicana',
+    name: 'Dominican Republic',
     code: 'DO'
   },
   {
@@ -634,7 +634,7 @@ export const states: State[] = [
     code: 'SV'
   },
   {
-    name: 'Giamaica',
+    name: 'Jamaica',
     code: 'JM'
   },
   {
@@ -654,7 +654,7 @@ export const states: State[] = [
     code: 'HN'
   },
   {
-    name: 'Messico',
+    name: 'Mexico',
     code: 'MX'
   },
   {
@@ -666,19 +666,19 @@ export const states: State[] = [
     code: 'PA'
   },
   {
-    name: 'Santa Lucia',
+    name: 'Saint Lucia',
     code: 'LC'
   },
   {
-    name: 'Saint Vincent e Grenadine',
+    name: 'Saint Vincent and the Grenadines',
     code: 'VC'
   },
   {
-    name: 'Saint Kitts e Nevis',
+    name: 'Saint Kitts and Nevis',
     code: 'KN'
   },
   {
-    name: 'Stati Uniti d\\\'America',
+    name: 'United States of America',
     code: 'US'
   },
   {
@@ -690,11 +690,11 @@ export const states: State[] = [
     code: 'BO'
   },
   {
-    name: 'Brasile',
+    name: 'Brazil',
     code: 'BR'
   },
   {
-    name: 'Cile',
+    name: 'Chile',
     code: 'CL'
   },
   {
@@ -714,7 +714,7 @@ export const states: State[] = [
     code: 'PY'
   },
   {
-    name: 'Perù',
+    name: 'Peru',
     code: 'PE'
   },
   {
@@ -722,7 +722,7 @@ export const states: State[] = [
     code: 'SR'
   },
   {
-    name: 'Trinidad e Tobago',
+    name: 'Trinidad and Tobago',
     code: 'TT'
   },
   {
@@ -738,7 +738,7 @@ export const states: State[] = [
     code: 'AU'
   },
   {
-    name: 'Figi',
+    name: 'Fiji',
     code: 'FJ'
   },
   {
@@ -746,11 +746,11 @@ export const states: State[] = [
     code: 'KI'
   },
   {
-    name: 'Isole Marshall',
+    name: 'Marshall Islands',
     code: 'MH'
   },
   {
-    name: 'Stati Federati di Micronesia',
+    name: 'Federated States of Micronesia',
     code: 'FM'
   },
   {
@@ -758,7 +758,7 @@ export const states: State[] = [
     code: 'NR'
   },
   {
-    name: 'Nuova Zelanda',
+    name: 'New Zealand',
     code: 'NZ'
   },
   {
@@ -766,11 +766,11 @@ export const states: State[] = [
     code: 'PW'
   },
   {
-    name: 'Papua Nuova Guinea',
+    name: 'Papua New Guinea',
     code: 'PG'
   },
   {
-    name: 'Isole Salomone',
+    name: 'Solomon Islands',
     code: 'SB'
   },
   {
@@ -790,19 +790,19 @@ export const states: State[] = [
     code: 'VU'
   },
   {
-    name: 'Nuova Caledonia',
+    name: 'New Caledonia',
     code: 'NC'
   },
   {
-    name: 'Saint-Martin (FR)',
+    name: 'Saint Martin (FR)',
     code: 'MF'
   },
   {
-    name: 'Sahara occidentale',
+    name: 'Western Sahara',
     code: 'EH'
   },
   {
-    name: 'Saint-Barthélemy',
+    name: 'Saint Barthelemy',
     code: 'BL'
   },
   {
@@ -810,15 +810,15 @@ export const states: State[] = [
     code: 'BM'
   },
   {
-    name: 'Isole Cook (NZ)',
+    name: 'Cook Islands (NZ)',
     code: 'CK'
   },
   {
-    name: 'Gibilterra',
+    name: 'Gibraltar',
     code: 'GI'
   },
   {
-    name: 'Isole Cayman',
+    name: 'Cayman Islands',
     code: 'KY'
   },
   {
@@ -826,11 +826,11 @@ export const states: State[] = [
     code: 'AI'
   },
   {
-    name: 'Polinesia francese',
+    name: 'French Polynesia',
     code: 'PF'
   },
   {
-    name: 'Isole Fær Øer',
+    name: 'Faroe Islands',
     code: 'FO'
   },
   {
@@ -842,11 +842,11 @@ export const states: State[] = [
     code: 'AW'
   },
   {
-    name: 'Sint Maarten (NL)',
+    name: 'St Maarten (NL)',
     code: 'SX'
   },
   {
-    name: 'Groenlandia',
+    name: 'Greenland',
     code: 'GL'
   },
   {
@@ -858,11 +858,11 @@ export const states: State[] = [
     code: 'GG'
   },
   {
-    name: 'Isole Falkland (Malvine)',
+    name: 'Falkland Islands (Malvinas)',
     code: 'FK'
   },
   {
-    name: 'Isola di Man',
+    name: 'Isle of Man',
     code: 'IM'
   },
   {
@@ -874,31 +874,31 @@ export const states: State[] = [
     code: 'CW'
   },
   {
-    name: 'Isole Pitcairn',
+    name: 'Pitcairn',
     code: 'PN'
   },
   {
-    name: 'Saint Pierre e Miquelon',
+    name: 'Saint Pierre and Miquelon',
     code: 'PM'
   },
   {
-    name: 'Sant\'Elena',
+    name: 'Saint Helena',
     code: 'SH'
   },
   {
-    name: 'Terre australi e antartiche francesi',
+    name: 'French Southern Territories',
     code: 'TF'
   },
   {
-    name: 'Isole Turks e Caicos',
+    name: 'Turks and Caicos Islands',
     code: 'TC'
   },
   {
-    name: 'Isole Vergini britanniche',
+    name: 'British Virgin Islands',
     code: 'VG'
   },
   {
-    name: 'Wallis e Futuna',
+    name: 'Wallis and Futuna Islands',
     code: 'WF'
   }
 ];
