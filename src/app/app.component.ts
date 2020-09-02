@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
 
   fileToImportSelected(file: File): void {
     if (file.type !== 'application/json') {
-      this.snackbar.open('File non supportato', null, {
+      this.snackbar.open('Unsupported file', null, {
         duration: 2000
       });
       return;
@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
         location.reload();
       } catch (e) {
         localStorage.clear();
-        this.snackbar.open('File non supportato', null, {
+        this.snackbar.open('Unsupported file', null, {
           duration: 2000
         });
       }

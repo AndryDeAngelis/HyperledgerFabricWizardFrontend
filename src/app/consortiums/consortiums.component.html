@@ -1,9 +1,9 @@
 <div fxLayout="row" style="margin-top: 50px">
   <mat-card fxFlexOrder="2" fxFlex.lt-sm="100" fxFlex.gt-md="60" fxFlex="80">
     <div fxLayout="row">
-      <h2 fxFlex>Consorzi</h2>
+      <h2 fxFlex>Consortium</h2>
       <div fxFlex fxFlexAlign="center" *ngIf="this.form.errors?.error">
-        <mat-error style="text-align: end">*Consorzi con lo stesso nome!</mat-error>
+        <mat-error style="text-align: end">*Existing consortium name!</mat-error>
         <br>
       </div>
     </div>
@@ -11,11 +11,11 @@
       <ng-template ngFor let-consortium [ngForOf]="consortiums" let-i="index">
         <div formGroupName="{{this.consortiumControl(i)}}" fxLayout="row wrap" fxLayoutGap="2% grid">
           <mat-form-field fxFlex>
-            <mat-label>Nome <strong>consorzio {{i + 1}}</strong></mat-label>
+            <mat-label><strong>Consortium {{i + 1}}</strong> name</mat-label>
             <input required matInput formControlName="{{this.nameControl()}}">
           </mat-form-field>
           <mat-form-field fxFlex="100">
-            <mat-label>Organizzazioni <strong>consorzio {{i + 1}}</strong></mat-label>
+            <mat-label><strong>Consortium {{i + 1}}</strong> organizations </mat-label>
             <mat-select required multiple formControlName="{{this.orgsControl()}}">
               <ng-template ngFor let-org [ngForOf]="this.orgs">
                 <mat-option [value]="org.fullName">{{org.fullName}}</mat-option>
@@ -27,15 +27,15 @@
         <br>
       </ng-template>
       <div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="2%">
-        <button type="button" color="accent" (click)="addConsortium()" mat-button>Nuovo consorzio
+        <button type="button" color="accent" (click)="addConsortium()" mat-button>New consortium
           <mat-icon>add</mat-icon>
         </button>
         <button (click)="removeConsortium()" *ngIf="this.consortiums.length > 1" type="button" color="warn" mat-button>
-          Rimuovi consorzio
+          Remove consortium
           <mat-icon>delete</mat-icon>
         </button>
         <div fxFlex></div>
-        <button color="accent" mat-flat-button type="submit" matStepperNext>Avanti
+        <button color="accent" mat-flat-button type="submit" matStepperNext>Next
           <mat-icon>chevron_right</mat-icon>
         </button>
       </div>

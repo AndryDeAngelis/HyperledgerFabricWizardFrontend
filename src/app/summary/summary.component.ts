@@ -26,7 +26,7 @@ export class SummaryComponent implements OnInit {
       FileSaver.saveAs(s.body, s.headers.get('Content-Disposition').split('filename=')[1]);
     }, e => {
       this.disabled = false;
-      this.snackbar.open('Errore di rete', null, {
+      this.snackbar.open('Network error', null, {
         duration: 2000
       });
     });

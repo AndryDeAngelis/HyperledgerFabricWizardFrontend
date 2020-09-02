@@ -1,18 +1,18 @@
 <app-nav [rootComponent]="this" [title]="this.title">
   <app-mystepper [@.disabled]="true" linear #stepper>
-    <cdk-step label="Rete" [stepControl]="networkComponent.form">
+    <cdk-step label="Network" [stepControl]="networkComponent.form">
       <app-network #networkComponent [network]="this.network"></app-network>
     </cdk-step>
-    <cdk-step label="Organizzazioni" [stepControl]="organizationsComponent.form">
+    <cdk-step label="Organizations" [stepControl]="organizationsComponent.form">
       <app-organizations [rootStepper]="stepper" #organizationsComponent [orgs]="this.network.orgs"></app-organizations>
     </cdk-step>
-    <cdk-step label="Consorzi" [stepControl]="consortiumsComponent.form">
+    <cdk-step label="Consortiums" [stepControl]="consortiumsComponent.form">
       <app-consortiums #consortiumsComponent [network]="this.network"></app-consortiums>
     </cdk-step>
-    <cdk-step label="Canali" [stepControl]="channelsComponent.form">
+    <cdk-step label="Channels" [stepControl]="channelsComponent.form">
       <app-channels #channelsComponent [network]="this.network"></app-channels>
     </cdk-step>
-    <cdk-step label="Fine">
+    <cdk-step label="Done">
       <app-summary [network]="this.network"></app-summary>
     </cdk-step>
   </app-mystepper>
