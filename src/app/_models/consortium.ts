@@ -10,15 +10,7 @@ export class Consortium {
     this.orgs = orgs;
   }
 
-  /*toJSON(): object {
-    return {
-      name: this.name,
-      orgs: this.orgs.map(o => o.fullName)
-    };
-  }*/
-
-
-  static parse(obj: any): Consortium {
+  static parse(orgs: Org[], obj: any): Consortium {
     const consortium = new Consortium();
     if (obj.name) {
       consortium.name = obj.name;
@@ -26,9 +18,19 @@ export class Consortium {
     if (Array.isArray(obj.orgs)) {
       consortium.orgs = [];
       obj.orgs.forEach(o => {
-        consortium.orgs.push(Org.parse(o));
+        const org = orgs.find(o1 => o1.fullName === o);
+        if (org) {
+          consortium.orgs.push(org);
+        }
       });
     }
     return consortium;
+  }
+
+  toJSON(): object {
+    return {
+      name: this.name,
+      orgs: this.orgs.map(o => o.fullName)
+    };
   }
 }

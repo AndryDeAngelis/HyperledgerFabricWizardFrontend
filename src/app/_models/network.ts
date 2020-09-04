@@ -30,13 +30,13 @@ export class Network {
     if (Array.isArray(obj.consortiums)) {
       network.consortiums = [];
       obj.consortiums.forEach(c => {
-        network.consortiums.push(Consortium.parse(c));
+        network.consortiums.push(Consortium.parse(network.orgs, c));
       });
     }
     if (Array.isArray(obj.channels)) {
       network.channels = [];
       obj.channels.forEach(c => {
-        network.channels.push(Channel.parse(c));
+        network.channels.push(Channel.parse(network.orgs, network.consortiums, c));
       });
     }
     return network;
