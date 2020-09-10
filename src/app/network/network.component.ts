@@ -18,7 +18,7 @@ export class NetworkComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.networkName = this.formBuilder.control('', [Validators.required, Validators.pattern('^\\S+$')]);
     this.networkName.valueChanges.subscribe(e => {
-      this.network.name = e.trim();
+      this.network.name = e?.trim();
     });
 
     this.form = this.formBuilder.group({
@@ -59,13 +59,15 @@ export class NetworkComponent implements OnInit {
     innerForm.addControl(this.nameControl(), nameControl);
     innerForm.addControl(this.domainControl(), domainControl);
     nameControl.valueChanges.subscribe(value => {
-      this.orgs[i].name = value.trim();
+      this.orgs[i].name = value?.trim();
     });
     domainControl.valueChanges.subscribe(value => {
-      this.orgs[i].domain = value.trim();
+      this.orgs[i].domain = value?.trim();
     });
     innerForm.valueChanges.subscribe(value => {
-      this.orgs[i].fullName = Object.values(value).join('.');
+      if (value) {
+        this.orgs[i].fullName = Object.values(value).join('.');
+      }
     });
     this.form.addControl(this.orgControl(i), innerForm);
     return innerForm;

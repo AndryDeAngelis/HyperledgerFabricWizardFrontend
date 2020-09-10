@@ -73,20 +73,24 @@ export class ChannelsComponent implements OnInit {
     this.form.addControl(this.channelControl(i), innerForm);
 
     channelName.valueChanges.subscribe(v => {
-      this.channels[i].name = v.trim();
+      this.channels[i].name = v?.trim();
     });
     channelConsortium.valueChanges.subscribe(v => {
-      this.channels[i].consortium = this.network.consortiums.find(c => {
-        return c.name === v;
-      });
+      if (v) {
+        this.channels[i].consortium = this.network.consortiums.find(c => {
+          return c.name === v;
+        });
+      }
       // channelOrgs.setValue(this.channels[i].consortium.orgs.map(o => o.fullName));
     });
     channelOrgs.valueChanges.subscribe((orgs: string[]) => {
-      this.channels[i].orgs = this.network.orgs.filter(o => {
-        return orgs.find(j => {
-          return o.fullName === j;
+      if (orgs) {
+        this.channels[i].orgs = this.network.orgs.filter(o => {
+          return orgs.find(j => {
+            return o.fullName === j;
+          });
         });
-      });
+      }
     });
   }
 
@@ -108,8 +112,8 @@ export class ChannelsComponent implements OnInit {
       this.channels.forEach((c, index) => {
         this.addChannelControls(index);
         this.form.get(this.nameControl(index)).setValue(c.name);
-        this.form.get(this.consortiumControl(index)).setValue(c.consortium.name);
-        this.form.get(this.orgsControl(index)).setValue(c.orgs.map(o => o.fullName));
+        this.form.get(this.consortiumControl(index)).setValue(c.consortium?.name);
+        this.form.get(this.orgsControl(index)).setValue(c.orgs?.map(o => o.fullName));
       });
     } else {
       this.addChannel();

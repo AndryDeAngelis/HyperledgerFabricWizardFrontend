@@ -53,16 +53,16 @@ export class OrganizationComponent implements OnInit, OnDestroy {
     });
 
     this.caName.valueChanges.subscribe(n => {
-      this.ca.name = n.trim();
+      this.ca.name = n?.trim();
     });
     this.caUsername.valueChanges.subscribe(n => {
-      this.ca.username = n.trim();
+      this.ca.username = n?.trim();
     });
     this.caPassword.valueChanges.subscribe(n => {
-      this.ca.password = n.trim();
+      this.ca.password = n?.trim();
     });
     this.caURL.valueChanges.subscribe(n => {
-      this.ca.url = n.trim();
+      this.ca.url = n?.trim();
     });
     this.caPort.valueChanges.subscribe(n => {
       this.ca.port = n;
@@ -184,7 +184,7 @@ export class OrganizationComponent implements OnInit, OnDestroy {
     this.form.addControl(this.memberControl(i), innerForm);
 
     nameControl.valueChanges.subscribe(e => {
-      this.entities[i].name = e.trim();
+      this.entities[i].name = e?.trim();
     });
     typeControl.valueChanges.subscribe(e => {
       this.entities[i] = this.entities[i].toEntityInstance(Type[e] as unknown as Type);
@@ -203,7 +203,7 @@ export class OrganizationComponent implements OnInit, OnDestroy {
     urlControl.valueChanges.subscribe(e => {
       const entity = this.entities[i];
       if (entity instanceof Peer || entity instanceof Orderer) {
-        entity.url = e.trim();
+        entity.url = e?.trim();
       }
     });
     portControl.valueChanges.subscribe(e => {

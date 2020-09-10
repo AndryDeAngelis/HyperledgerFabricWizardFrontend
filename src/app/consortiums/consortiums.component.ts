@@ -54,14 +54,16 @@ export class ConsortiumsComponent implements OnInit {
     innerForm.addControl(this.orgsControl(), consortiumOrgs);
     this.form.addControl(this.consortiumControl(i), innerForm);
     consortiumName.valueChanges.subscribe(value => {
-      this.consortiums[i].name = value.trim();
+      this.consortiums[i].name = value?.trim();
     });
     consortiumOrgs.valueChanges.subscribe((values: string[]) => {
-      this.consortiums[i].orgs = this.orgs.filter(o => {
-        return values.find(v => {
-          return o.fullName === v;
+      if (values) {
+        this.consortiums[i].orgs = this.orgs.filter(o => {
+          return values.find(v => {
+            return o.fullName === v;
+          });
         });
-      });
+      }
     });
   }
 
@@ -84,7 +86,7 @@ export class ConsortiumsComponent implements OnInit {
       this.consortiums.forEach((consortium, index) => {
         this.addConsortiumControl(index);
         this.form.get(this.nameControl(index)).setValue(consortium.name);
-        this.form.get(this.orgsControl(index)).setValue(consortium.orgs.map(o => o.fullName));
+        this.form.get(this.orgsControl(index)).setValue(consortium.orgs?.map(o => o.fullName));
       });
     } else {
       this.addConsortium();
