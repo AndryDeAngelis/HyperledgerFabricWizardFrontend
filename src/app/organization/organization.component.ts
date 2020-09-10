@@ -276,7 +276,11 @@ export class OrganizationComponent implements OnInit, OnDestroy {
         }
       });
     } else {
-      this.addMember();
+      // this.addMember();
+      this.entities.push(new Client(undefined, this.org, true, null));
+      const typeControl = this.addMemberControl(0).get(this.typeControl());
+      typeControl.setValue('Admin');
+      typeControl.disable();
     }
     this.parentForm.addControl(String(this.i), this.form);
     this.form.setValidators((control: FormGroup) => {

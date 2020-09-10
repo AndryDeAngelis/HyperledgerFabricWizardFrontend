@@ -35,8 +35,8 @@ export class Channel {
   toJSON(): object {
     return {
       name: this.name,
-      consortium: this.consortium.name,
-      orgs: this.orgs.map(o => o.fullName)
+      consortium: this.consortium?.name,
+      orgs: this.orgs?.map(o => o.fullName)
     };
   }
 }

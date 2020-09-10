@@ -30,7 +30,7 @@ export class Consortium {
   toJSON(): object {
     return {
       name: this.name,
-      orgs: this.orgs.map(o => o.fullName)
+      orgs: this.orgs?.map(o => o.fullName)
     };
   }
 }
